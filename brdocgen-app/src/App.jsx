@@ -15,18 +15,13 @@ export default function App() {
   }
 
   return (
-    <div className="p-[20px]">
+    <div className="p-[20px] w-[300px]">
       <h1 className="text-[24px]">
         <span className="text-[#009c3b]">B</span>
         <span className="text-[#ffdf00]">R</span>DocGen
       </h1>
       {fields.map((field) => (
-        <Field
-          key={field.id}
-          label={field.label}
-          id={field.id}
-          width={`w-[${field.width}px]`}
-        />
+        <Field key={field.id} {...field} />
       ))}
       <button onClick={teste}>Teste</button>
     </div>

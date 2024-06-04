@@ -12,6 +12,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "watch-build": "onchange 'src/**' -- npm run build",
     "start": "react-scripts start",
     "build": "react-scripts build && sed -i 's|href=\"/|href=\"|g' build/index.html && sed -i 's|src=\"/|src=\"|g' build/index.html",
     "test": "react-scripts test",
@@ -31,6 +32,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.19",
+    "onchange": "^7.1.0",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.3"
   }

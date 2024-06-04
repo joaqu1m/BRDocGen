@@ -33,6 +33,8 @@ export default [
     label: "CNPJ",
     width: 250,
     generate() {
+      const pesos1 = [5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
+      const pesos2 = [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
       let cnpj = "";
       for (let i = 0; i < 12; i++) {
         cnpj += Math.floor(Math.random() * 10) % 10;
@@ -40,15 +42,19 @@ export default [
 
       let sum = 0;
       for (let i = 0; i < 12; i++) {
-        sum += parseInt(cnpj[i]) * (i < 4 ? i + 5 : 13 - i);
+        sum += parseInt(cnpj[i]) * pesos1[i];
       }
-      cnpj += (sum % 11) % 10;
+      let primDigit = sum % 11;
+      primDigit = primDigit < 2 ? 0 : 11 - primDigit;
+      cnpj += primDigit;
 
       sum = 0;
       for (let i = 0; i < 13; i++) {
-        sum += parseInt(cnpj[i]) * (i < 5 ? i + 6 : 14 - i);
+        sum += parseInt(cnpj[i]) * pesos2[i];
       }
-      cnpj += (sum % 11) % 10;
+      let segDigit = sum % 11;
+      segDigit = segDigit < 2 ? 0 : 11 - segDigit;
+      cnpj += segDigit;
 
       return cnpj;
     },
