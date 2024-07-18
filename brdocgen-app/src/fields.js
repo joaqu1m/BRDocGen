@@ -1,5 +1,8 @@
+import ceps from "./assets/ceps";
+import cnpjs from "./assets/cnpjs";
 import nomes from "./assets/nomes";
 import sobrenomes from "./assets/sobrenomes";
+import getRandomFrom from "./utils/getRandomFrom";
 
 export default [
   {
@@ -35,10 +38,12 @@ export default [
     generate() {
       const pesos1 = [5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
       const pesos2 = [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
-      let cnpj = "";
-      for (let i = 0; i < 12; i++) {
-        cnpj += Math.floor(Math.random() * 10) % 10;
-      }
+
+      let cnpj = getRandomFrom(cnpjs) + "0001";
+
+      // for (let i = 0; i < 12; i++) {
+      //   cnpj += Math.floor(Math.random() * 10) % 10;
+      // }
 
       let sum = 0;
       for (let i = 0; i < 12; i++) {
@@ -72,11 +77,19 @@ export default [
     },
   },
   {
+    id: "cep",
+    label: "CEP",
+    width: 250,
+    generate() {
+      return getRandomFrom(ceps);
+    },
+  },
+  {
     id: "prim_nome",
     label: "Primeiro Nome",
     width: 250,
     generate() {
-      return nomes[Math.floor(Math.random() * nomes.length)];
+      return getRandomFrom(nomes);
     },
   },
   {
@@ -84,7 +97,7 @@ export default [
     label: "Último Nome",
     width: 250,
     generate() {
-      return nomes[Math.floor(Math.random() * nomes.length)];
+      return getRandomFrom(sobrenomes);
     },
   },
   {
@@ -93,12 +106,10 @@ export default [
     width: 250,
     generate() {
       const qntSobrenomes = Math.floor(Math.random() * 3) + 1;
-      const nome = nomes[Math.floor(Math.random() * nomes.length)];
+      const nome = getRandomFrom(nomes);
       const sobrenomesGerados = [];
       for (let i = 0; i < qntSobrenomes; i++) {
-        sobrenomesGerados.push(
-          sobrenomes[Math.floor(Math.random() * sobrenomes.length)]
-        );
+        sobrenomesGerados.push(getRandomFrom(sobrenomes));
       }
       return `${nome} ${sobrenomesGerados.join(" ")}`;
     },
