@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+const refreshIcon = chrome.runtime.getURL("src/assets/imgs/refresh.svg");
+
 export default function Field({ label, id, width, generate }) {
   const [value, setValue] = useState(generate());
 
@@ -23,7 +25,7 @@ export default function Field({ label, id, width, generate }) {
             setValue(generate());
           }}
         >
-          <img src="/refresh.svg" alt="" />
+          <img src={refreshIcon} alt="" />
         </button>
       </div>
     </div>

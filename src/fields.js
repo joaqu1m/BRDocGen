@@ -1,7 +1,7 @@
-import ceps from "./assets/ceps";
-import cnpjs from "./assets/cnpjs";
-import nomes from "./assets/nomes";
-import sobrenomes from "./assets/sobrenomes";
+import ceps from "./assets/data/ceps";
+import cnpjs from "./assets/data/cnpjs";
+import nomes from "./assets/data/nomes";
+import sobrenomes from "./assets/data/sobrenomes";
 import getRandomFrom from "./utils/getRandomFrom";
 
 export default [
