@@ -15,7 +15,7 @@ export default function Field({ label, id, width, generate }) {
         <input
           id={id}
           type="text"
-          className="w-full h-full outline-none rounded-[10px] px-2 py-2 border-[#ddd] border-2"
+          className="w-full h-full outline-none rounded-[10px] px-2 py-2 border-[#ddd] border-2 focus:border-[#9e9e9e]"
           value={value}
           onFocus={(e) => e.target.select()}
         />
@@ -25,7 +25,7 @@ export default function Field({ label, id, width, generate }) {
             setValue(generate());
           }}
         >
-          <img src={refreshIcon} alt="" />
+          <img src={refreshIcon} alt="refresh-icon" className="w-4 h-4" />
         </button>
       </div>
     </div>

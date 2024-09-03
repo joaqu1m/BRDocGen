@@ -3,19 +3,9 @@
   "name": "BRDocGen",
   "version": "1.0",
   "description": "Gera valores de documentos brasileiros - Para devs e equipe de qualidade",
-  "permissions": ["activeTab"],
-  "background": {
-    "service_worker": "background.js"
-  },
   "action": {
     "default_popup": "build/index.html"
   },
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["content.js"]
-    }
-  ],
   "icons": {
     "16": "brdocgen.png",
     "32": "brdocgen.png",

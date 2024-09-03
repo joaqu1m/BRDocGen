@@ -1,4 +1,5 @@
 import ceps from "./assets/data/ceps";
+import cnaes from "./assets/data/cnaes";
 import cnpjs from "./assets/data/cnpjs";
 import nomes from "./assets/data/nomes";
 import sobrenomes from "./assets/data/sobrenomes";
@@ -82,6 +83,14 @@ export default [
     width: 250,
     generate() {
       return getRandomFrom(ceps);
+    },
+  },
+  {
+    id: "cnae",
+    label: "CNAE",
+    width: 250,
+    generate() {
+      return getRandomFrom(cnaes);
     },
   },
   {
