@@ -1,5 +1,11 @@
 {
   "manifest_version": 3,
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "brdocgen@joaq.uim",
+      "strict_min_version": "42.0"
+    }
+  },
   "name": "BRDocGen",
   "version": "1.0",
   "description": "Gera valores de documentos brasileiros - Para devs e equipe de qualidade",
